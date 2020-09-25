@@ -17,12 +17,15 @@ export class TodoItem extends Component {
         return (
             <div style={ this.getStyle() }>
                 <p>
-                    <input 
-                        type="checkbox" 
-                        onChange={ this.props.markComplete.bind(this, id) }
-                    />
-                    { ' ' }
-                    { title }
+                    <label>
+                        <input 
+                            type="checkbox"
+                            checked={ this.props.todo.completed && 'checked' }
+                            onChange={ this.props.markComplete.bind(this, id) }
+                        />
+                        { ' ' }
+                        { title }
+                    </label>
                     <button 
                         style={ btnStyle } 
                         onClick={ this.props.delTodo.bind(this, id) }
@@ -43,6 +46,7 @@ TodoItem.propTypes = {
 const btnStyle = {
     background: '#ff0000',
     color: '#fff',
+    fontWeight: 'bold',
     border: 'none',
     padding: '5px 10px',
     borderRadius: '50%',

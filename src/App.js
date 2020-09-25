@@ -4,13 +4,11 @@ import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import Header from './components/layout/Header';
 import About from './components/pages/About';
-// import { v4 as uuid } from 'uuid';
 
 import './App.css';
-import Axios from 'axios';
 
 class App extends Component {
-  state= {
+  state = {
     todos: []
   }
 
@@ -20,7 +18,7 @@ class App extends Component {
       .then(data => this.setState({
         todos: data
       }))
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
   // Toggle complete
@@ -35,10 +33,18 @@ class App extends Component {
 
   // Delete Todo
   delTodo = (id) => {
-    Axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }
+
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, options)
       .then(this.setState({
         todos: [...this.state.todos.filter(todo => todo.id !== id)]
-      }));
+      }))
+      .catch(err => console.log(err));
   }
 
   // Add Todo
@@ -63,7 +69,7 @@ class App extends Component {
           todos: [...this.state.todos, data]
         })
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -74,7 +80,7 @@ class App extends Component {
             <Header />
             <Route
               exact path="/"
-              render={ props => (
+              render={ () => (
                 <React.Fragment>
                   <AddTodo
                     addTodo={ this.addTodo }
