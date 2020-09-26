@@ -79,7 +79,7 @@ class App extends Component {
           <div className="container">
             <Header />
             <Route
-              exact path="/"
+              exact path="/react-todo"
               render={ () => (
                 <React.Fragment>
                   <AddTodo
@@ -94,7 +94,7 @@ class App extends Component {
               ) }
             />
             <Route
-              path="/about"
+              path="/react-todo/about"
               component={ About }
             />
           </div>
