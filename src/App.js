@@ -94,7 +94,7 @@ class App extends Component {
               ) }
             />
             <Route
-              path="/about"
+              path="/react-todo/about"
               component={ About }
             />
           </div>
