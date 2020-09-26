@@ -1,7 +1,7 @@
 # React TodoList App
 
 <p align="center">
-  <img width="320" src="react-logo.png">
+  <img width="240" src="react-logo.png">
 </p>
 
 ### Project
