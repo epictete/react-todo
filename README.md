@@ -1,6 +1,8 @@
 # React TodoList App
 
-![React logo](react-logo.png)
+<p align="center">
+  <img width="320" src="react-logo.png">
+</p>
 
 ### Project
 This is my first React App :tada:  
