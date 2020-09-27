@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export class TodoItem extends Component {
+class TodoItem extends Component {
     getStyle = () => {
         return {
             background: '#f4f4f4',
             padding: '10px',
-            borderBottom: '1px #ccc dotted',
-            textDecoration: this.props.todo.completed ? 'line-through' : 'none'
+            borderBottom: '1px #ccc dotted'           
         }
     }
 
@@ -24,12 +23,12 @@ export class TodoItem extends Component {
                             onChange={ this.props.markComplete.bind(this, id) }
                         />
                         { ' ' }
-                        { title }
+                        <span style={ this.props.todo.completed ? completedStyle : null }>{ title }</span>
                     </label>
                     <button 
                         style={ btnStyle } 
                         onClick={ this.props.delTodo.bind(this, id) }
-                    >x</button>
+                    >Delete</button>
                 </p>
             </div>
         )
@@ -49,9 +48,15 @@ const btnStyle = {
     fontWeight: 'bold',
     border: 'none',
     padding: '5px 10px',
-    borderRadius: '50%',
+    borderRadius: '10%',
     cursor: 'pointer',
     float: 'right'
+}
+
+const completedStyle = {
+    fontStyle: "italic",
+    color: "#cdcdcd",
+    textDecoration: "line-through"
 }
 
 export default TodoItem;
