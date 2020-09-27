@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class TodoItem extends Component {
-    getStyle = () => {
+function TodoItem(props) {
+    const getStyle = () => {
         return {
             background: '#f4f4f4',
             padding: '10px',
@@ -10,29 +10,27 @@ class TodoItem extends Component {
         }
     }
 
-    render() {
-        const { id, title } = this.props.todo;
+    const { id, title, completed } = props.todo;
 
-        return (
-            <div style={ this.getStyle() }>
-                <p>
-                    <label>
-                        <input 
-                            type="checkbox"
-                            checked={ this.props.todo.completed && 'checked' }
-                            onChange={ this.props.markComplete.bind(this, id) }
-                        />
-                        { ' ' }
-                        <span style={ this.props.todo.completed ? completedStyle : null }>{ title }</span>
-                    </label>
-                    <button 
-                        style={ btnStyle } 
-                        onClick={ this.props.delTodo.bind(this, id) }
-                    >Delete</button>
-                </p>
-            </div>
-        )
-    }
+    return (
+        <div style={ getStyle() }>
+            <p>
+                <label>
+                    <input 
+                        type="checkbox"
+                        checked={ completed && 'checked' }
+                        onChange={ props.markComplete.bind(this, id) }
+                    />
+                    { ' ' }
+                    <span style={ completed ? completedStyle : null }>{ title }</span>
+                </label>
+                <button 
+                    style={ btnStyle } 
+                    onClick={ props.delTodo.bind(this, id) }
+                >Delete</button>
+            </p>
+        </div>
+    )
 }
 
 // PropTypes
