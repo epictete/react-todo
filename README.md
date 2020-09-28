@@ -16,9 +16,12 @@ Tips and suggestions are more than welcome, the goal is to learn and improve :ro
 - Functionnal components using hooks (UseState & UseEffect)
 - Using fetch API instead of Axios - for fun and for practice ;-)
 - [{JSON} Placeholder](https://jsonplaceholder.typicode.com/) API for the todos
-- Use of a basic Router (Home / About)
+- React Router (Home / About)
 - PropTypes
+- Styling : inline / method
+- Component drilling
 - [UUID v4](https://www.npmjs.com/package/uuid)
+- [gh-pages](https://www.npmjs.com/package/gh-pages) for publication
 
 ### Link
 
