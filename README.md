@@ -14,7 +14,7 @@ Tips and suggestions are more than welcome, the goal is to learn and improve :ro
 ### Features
 
 - Functionnal components using hooks (UseState & UseEffect)
-- Using fetch API instead of Axios - for fun and for practice ;-)
+- Using fetch API instead of Axios - for fun and for practice :wink:
 - [{JSON} Placeholder](https://jsonplaceholder.typicode.com/) API for the todos
 - React Router (Home / About)
 - PropTypes
